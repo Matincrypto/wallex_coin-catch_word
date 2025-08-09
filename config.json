@@ -1,0 +1,29 @@
+{
+  "telegram": {
+    "bot_token": "7435237309:AAEAXXkce1VU8Wk-NqxX1v6VKnSMaydbErs",
+    "group_chat_id": -1002684336789,
+    "message_thread_id": 2
+  },
+  "settings": {
+    "price_difference_threshold": 1.0,
+    "min_global_volume_usd": 10000000,
+    "max_allowed_percentage_difference": 100.0,
+    "check_interval_seconds": 300
+  },
+  "price_sources": {
+    "wallex": {
+      "base_url": "https://api.wallex.ir/v1/",
+      "api_key": "15602|9tOxv4i9E3epU7chGYt2KVak9L0O9HvUFpcuHbom",
+      "markets_endpoint": "markets",
+      "trades_endpoint": "trades"
+    },
+    "bybit": {
+      "base_url": "https://api.bybit.com",
+      "tickers_endpoint": "/v5/market/tickers?category=spot"
+    },
+    "coincatch": {
+      "base_url": "https://api.coincatch.com",
+      "tickers_endpoint": "/api/spot/v1/market/tickers"
+    }
+  }
+}
