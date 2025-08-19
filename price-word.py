@@ -136,10 +136,10 @@ async def analyze_prices(config):
                 iran_time_str = iran_now.strftime('%Y-%m-%d %H:%M:%S')
 
                 if percentage_diff < 0:
-                    action = "BUY"
+                    action = "Higher"
                     profit_potential = abs(percentage_diff)
                 else:
-                    action = "SELL"
+                    action = "Lower"
                     profit_potential = percentage_diff
 
                 def escape_markdown(text):
@@ -154,9 +154,9 @@ async def analyze_prices(config):
 
                 message = (
                     f"*{action} : {escape_markdown(base_asset)}\-USDT*\n\n"
-                    f"Inter Price : `${safe_entry_price}`\n"
+                    f"Entry price : `${safe_entry_price}`\n"
                     f"Target Price : `${safe_target_price}`\n"
-                    f"Difference : *{safe_profit}\%*\n\n"
+                    f"Profit : *{safe_profit}\%*\n\n"
                     f"[{'خرید' if action == 'BUY' else 'فروش'} در والکس]({trade_link})\n\n"
                     f"Time : `{safe_time}`"
                 )
@@ -176,4 +176,5 @@ async def main():
         await asyncio.sleep(wait_time)
 
 if __name__ == "__main__":
+
     asyncio.run(main())
